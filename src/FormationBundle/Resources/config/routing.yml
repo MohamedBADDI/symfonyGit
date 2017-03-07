@@ -1,0 +1,48 @@
+formation_homepage:
+    path:     /
+    defaults: { _controller: FormationBundle:Default:index }
+
+formation_demo :
+    path : /demo
+    defaults : {_controller: FormationBundle:Default:demo}
+index:
+    path:     /
+    defaults: { _controller: FormationBundle:Formation:index }
+
+edit:
+    path:     /edit/{id}/{title}
+    defaults: { _controller: FormationBundle:Formation:edit }
+
+show:
+    path:     /show/{id}/{title}
+    defaults: { _controller: FormationBundle:Formation:show }
+    show:
+        path:     /formation/create
+        defaults: { _controller: FormationBundle:Formation:create }
+
+ajouter_etudiant:
+    path:     /ajouterEtudiant
+    defaults: { _controller: FormationBundle:Etudiant:ajouterEtudiant }
+    requirements:
+            id: '\d+'
+    methods:  [POST]
+
+modifier_etudiant:
+    path:     /{id}/modifierEtudiant
+    defaults: { _controller: FormationBundle:Etudiant:modifierEtudiant }
+    methods:  [POST]
+
+supprimer_etudiant:
+    path:     /{id}/supprimerEtudiant
+    defaults: { _controller: FormationBundle:Etudiant:supprimerEtudiant }
+    methods:  [POST]
+
+afficher_etudiant:
+    path:     /afficherEtudiant/{id}
+    defaults: { _controller: FormationBundle:Etudiant:afficherEtudiant, id: 7}
+
+affecter_etudiant:
+    path:     /{id}/affecterEtudiant
+    defaults: { _controller: FormationBundle:Etudiant:affecterEtudiant }
+    methods:  [POST]
+
